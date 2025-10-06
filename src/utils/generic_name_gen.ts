@@ -53,25 +53,25 @@ export function getFullName(nationName: string): string {
 
 export function realisticNameGenerator(nat: string): GeneratedName {
   //first we rand gen a probability
-  let num = Math.random();
+  const num = Math.random();
   const nationality = getAbbreviatedName(nat);
   const fullPrimaryNatName = getFullName(nat);
   //if num > our cap, no second nat and just gen a nation
   if(num > baseProbs[nationality]) {
-    let genName : string = generateName(nationality);
+    const genName : string = generateName(nationality);
     return {
       name: genName,
       nationality: fullPrimaryNatName
     };
   } else {
     //let's get our 2nd nationality
-    let randNat = getRandomNationality(DUAL_NATIONALITIES[nationality]);
+    const randNat = getRandomNationality(DUAL_NATIONALITIES[nationality]);
     //there are some special cases for the second nationality, so let's cover them
     //there are 3 cases: 3-letter abbrev, 'GENERAL', or a continent name
     switch(randNat!.length) {
       case 3:
         //this is a nation
-        let genAbbrName: string = generateName(nationality, randNat);
+        const genAbbrName: string = generateName(nationality, randNat);
         return {
           name: genAbbrName,
           nationality: fullPrimaryNatName,
@@ -79,9 +79,9 @@ export function realisticNameGenerator(nat: string): GeneratedName {
         };
       case 7:
         //this is 'general'
-        let newArr = [...new Set([...countryCodes].filter(code => code !== nationality))];
-        let secGenNat = newArr[Math.floor(Math.random() * newArr.length)];
-        let genGeneralName : string = generateName(nationality, secGenNat);
+        const newArr = [...new Set([...countryCodes].filter(code => code !== nationality))];
+        const secGenNat = newArr[Math.floor(Math.random() * newArr.length)];
+        const genGeneralName : string = generateName(nationality, secGenNat);
         return {
           name: genGeneralName,
           nationality: fullPrimaryNatName,
@@ -89,9 +89,9 @@ export function realisticNameGenerator(nat: string): GeneratedName {
         };
       default:
         //this is the continent case
-        let countryDict = eur_groups[nationality][randNat!];
-        let secNat = getRandomNationality(countryDict)!;
-        let genContiName : string = generateName(nationality, secNat);
+        const countryDict = eur_groups[nationality][randNat!];
+        const secNat = getRandomNationality(countryDict)!;
+        const genContiName : string = generateName(nationality, secNat);
         return {
           name: genContiName,
           nationality: fullPrimaryNatName,

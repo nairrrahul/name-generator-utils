@@ -1,5 +1,4 @@
 import { GeneratedName } from '@/interfaces';
-import { getAbbreviatedName } from '@/utils/generic_name_gen';
 
 const NameCard = ({ name, nationality, secondaryNationality }: GeneratedName) => (
   <div className="bg-white rounded-lg shadow-md p-6 mb-4 flex justify-between items-center">
