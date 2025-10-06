@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "eslintConfig": {
+    "rules": {
+        "no-var": 0
+    }
+  },
   "dependencies": {
     "fifa-name-generator": "^1.0.1",
     "flag-icons": "^7.5.0",
