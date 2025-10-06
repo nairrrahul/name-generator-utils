@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Some name generation utilities for regen names, particularly for FIFA/FC and FM. Currently only supports male names. Makes use of the `fifa-name-generator` library.
 
-## Getting Started
+Contains three utilities:
 
-First, run the development server:
+#### User-Customizable Name Generation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Allows the user to submit a primary and optional secondary nationality of their choice, and generates a name based off that.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Can toggle to `BATCH MODE`, where the user can submit 3-letter abbreviations of countries (either a singular country or 2 if a second nationality is desired) line-by-line. Valid 3-letter abbreviations can be found in `data/nations.json`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Demographic-Realistic Name Generation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Generate a set number of names from a country such that the names generated follow some reasonable demographic trends. Second nationalities are based on both immigration statistics and general groups of second nationalities present in male soccer players in the selected country
 
-## Learn More
+#### Team Generator
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Given a user-submitted country, generate a starting eleven of regen players. Nationalities and second nationalities are shown by flag. Hover over the flag to see what country it is for.
