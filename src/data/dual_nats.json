@@ -66,7 +66,7 @@
   "EST": {"RUS": 0.5, "FIN": 0.2, "SWE": 0.15, "LVA": 0.15},
   "SWZ": {"RSA": 0.6, "MOZ": 0.2, "LES": 0.1, "BOT": 0.1},
   "ETH": {"SUD": 0.2, "ERI": 0.2, "SOM": 0.2, "KEN": 0.2, "USA": 0.1, "ISR": 0.1},
-  "FRO": {"DEN": 0.5, "ISL": 0.2, "NOR": 0.15, "ENG": 0.15},
+  "FRO": {"DEN": 0.8, "ISL": 0.1, "NOR": 0.05, "ENG": 0.03, "GRL": 0.02},
   "FIJ": {"AUS": 0.35, "NZL": 0.3, "IND": 0.15, "TGA": 0.1, "SAM": 0.1},
   "FIN": {"SWE": 0.4, "RUS": 0.3, "EST": 0.2, "ENG": 0.1},
   "FRA": {"AFRICA": 0.4, "N_AMERICA": 0.2, "ASIA": 0.06, "BEL": 0.02, "ESP": 0.05, "TUR": 0.05, "POR": 0.03, "ROU": 0.03, "ITA": 0.03, "SRB": 0.02, "GENERAL": 0.01},
