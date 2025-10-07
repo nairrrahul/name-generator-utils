@@ -4,6 +4,7 @@ import fCode from '../../data/flag_codes.json'  with { type: 'json' };
 import "flag-icons/css/flag-icons.min.css";
 
 const FLAG_CODES = fCode as Record<string, string>;
+const basePath = process.env.NODE_ENV === 'production' ? '/name-generator-utils' : '';
 
 const FlagNameCard = ({ name, nationality, secondaryNationality }: GeneratedName) => {
 
@@ -22,7 +23,7 @@ const FlagNameCard = ({ name, nationality, secondaryNationality }: GeneratedName
       <div className="flex flex-col items-end gap-1">
         {['bq', 'gf', 'gp', 'zb', 're'].includes(primaryFlagCode) ? (
         <img
-          src={`/images/${primaryFlagCode}.svg`}
+          src={`${basePath}/images/${primaryFlagCode}.svg`}
           alt={nationality}
           title={nationality}
           className="w-12 h-8 object-cover shadow-md"
@@ -37,7 +38,7 @@ const FlagNameCard = ({ name, nationality, secondaryNationality }: GeneratedName
       {secondaryFlagCode && (
         ['bq', 'gf', 'gp', 'zb', 're'].includes(secondaryFlagCode) ? (
           <img
-            src={`/images/${secondaryFlagCode}.svg`}
+            src={`${basePath}/images/${secondaryFlagCode}.svg`}
             alt={secondaryNationality}
             title={secondaryNationality}
             className="w-7 h-5.25 object-cover shadow"
