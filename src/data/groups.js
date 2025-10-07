@@ -344,14 +344,15 @@ const NED_NAM =
 
 const ESP_NAM =
 {
-  "MEX": 0.35,
-  "CUB": 0.15,
+  "MEX": 0.3,
+  "CUB": 0.17,
   "DOM": 0.15,
   "PUR": 0.10,
   "CRC": 0.08,
   "HON": 0.05,
   "SLV": 0.05,
-  "USA": 0.07
+  "USA": 0.07,
+  "GUA": 0.03
 }
 
 const ESP_SAM =

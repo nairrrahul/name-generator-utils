@@ -20,18 +20,36 @@ const FlagNameCard = ({ name, nationality, secondaryNationality }: GeneratedName
     <div className="bg-white rounded-lg shadow-md p-6 mb-4 flex justify-between items-center gap-5">
       <div className="font-semibold text-gray-800">{name}</div>
       <div className="flex flex-col items-end gap-1">
-        <span 
-          className={`fi fi-${primaryFlagCode} text-3xl shadow-md `}
+        {['bq', 'gf', 'gp', 'zb', 're'].includes(primaryFlagCode) ? (
+        <img
+          src={`/images/${primaryFlagCode}.svg`}
+          alt={nationality}
+          title={nationality}
+          className="w-12 h-8 object-cover shadow-md"
+        />
+      ) : (
+        <span
+          className={`fi fi-${primaryFlagCode} text-3xl shadow-md`}
           title={nationality}
         >
         </span>
-        {secondaryFlagCode && (
-          <span 
+      )}
+      {secondaryFlagCode && (
+        ['bq', 'gf', 'gp', 'zb', 're'].includes(secondaryFlagCode) ? (
+          <img
+            src={`/images/${secondaryFlagCode}.svg`}
+            alt={secondaryNationality}
+            title={secondaryNationality}
+            className="w-7 h-5.25 object-cover shadow"
+          />
+        ) : (
+          <span
             className={`fi fi-${secondaryFlagCode} text-xl shadow`}
             title={secondaryNationality}
           >
           </span>
-        )}
+        )
+      )}
       </div>
     </div>
   );
