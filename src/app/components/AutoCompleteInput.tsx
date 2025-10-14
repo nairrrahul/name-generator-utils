@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import nations from "../../data/nations.json";
 
 const nationsData = nations as Record<string, string>;
@@ -16,8 +16,15 @@ const AutocompleteInput = ({
 }) => {
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const selectingRef = useRef(false);
 
   useEffect(() => {
+
+    if (selectingRef.current) {
+      selectingRef.current = false;
+      return;
+    }
+
     if (value.trim()) {
       const filtered = Object.keys(nationsData).filter(nation =>
         nation.toLowerCase().includes(value.toLowerCase())
@@ -46,10 +53,11 @@ const AutocompleteInput = ({
             <div
               key={nation}
               onClick={() => {
+                selectingRef.current = true;
                 onChange(nation);
                 setShowSuggestions(false);
               }}
-              className="px-4 py-2 hover:bg-blue-50 cursor-pointer"
+              className="px-4 py-2 hover:bg-blue-50 cursor-pointer text-gray-900"
             >
               {nation}
             </div>
