@@ -113,7 +113,7 @@ export default function RealisticName({nationsData} : NationDataProp) {
                   max="50"
                   value={section2NumNames}
                   onChange={(e) => setSection2NumNames(Math.max(1, parseInt(e.target.value) || 1))}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
                 />
               </div>
             </div>

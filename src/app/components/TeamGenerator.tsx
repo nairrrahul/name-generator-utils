@@ -94,7 +94,7 @@ export default function TeamGenerator({nationsData} : NationDataProp) {
                     type="checkbox"
                     checked={section3DemographicRealistic}
                     onChange={(e) => setSection3DemographicRealistic(e.target.checked)}
-                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 text-gray-900"
                   />
                   <span className="text-sm font-medium text-gray-700">
                     Demographic-Realistic Generation

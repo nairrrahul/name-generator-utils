@@ -118,7 +118,7 @@ export default function NameGenerator({nationsData} : NationDataProp) {
                     type="checkbox"
                     checked={secondaryEnabled}
                     onChange={(e) => setSecondaryEnabled(e.target.checked)}
-                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 text-gray-900"
                   />
                   <span className="text-sm font-medium text-gray-700">
                     Enable Secondary Nationality
